@@ -11,7 +11,7 @@ const ListsScreen = props => {
     <View style={styles.container}>
         <View style={styles.bottom}>
             <TouchableOpacity 
-                style={styles.bottom}
+                style={styles.button}
                 onPress={() => navigation.navigate('Add List')}
                 >
                 <Text style={styles.buttonText}>Add List</Text>
