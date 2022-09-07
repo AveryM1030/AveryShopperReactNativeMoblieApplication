@@ -28,4 +28,4 @@ const TabNavigator = props => {
   );
 };
 
-export default Screen;
+export default TabNavigator;
