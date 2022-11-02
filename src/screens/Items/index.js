@@ -13,7 +13,7 @@ const itemsTableName = 'items';
 const ItemsScreen = props => {
 
   const navigation = useNavigation();
-
+  
   const [items, setItems] = useState([]);
 
   useEffect(() => {
