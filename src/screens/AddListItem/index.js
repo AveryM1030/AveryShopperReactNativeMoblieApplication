@@ -51,64 +51,67 @@ const AddListItemScreen = props => {
              }
              // assign results array to items state variable
              setItems(results);
-             /* [
-             //   {
-             //     id: 1,
-                    name: Eggs,
-                    price: 4.49,
-                    quantity: 2,
-                    list_id: 1
-             //   },
-                  {
-                    id: 2,
-                    name: Milk,
-                    price: 4.99,
-                    quanity: 1,
-                    list_id: 1
-                  }
-                   {
-                    id: 3,
-                    name: Bread,
-                    price: 2.99,
-                    quanity: 2,
-                    list_id: 1
-                  }
-                  {
-                    id: 4,
-                    name: Box of Chocolate,
-                    price: 35.99,
-                    quanity: 1,
-                    list_id: 2
-                  }
-                   {
-                    id: 5,
-                    name: Necklace,
-                    price: 25.99,
-                    quanity: 1,
-                    list_id: 2
-                  }
-                  {
-                    id: 6,
-                    name: Bleach,
-                    price: 7.49,
-                    quanity: 1,
-                    list_id: 1
-                  }
-                  {
-                    id: 7,
-                    name: Dog Food,
-                    price: 16.49,
-                    quanity: 1,
-                    list_id: 3
-                  }
-                  {
-                    id: 8,
-                    name: Dog Treat,
-                    price: 2.99,
-                    quanity: 2,
-                    list_id: 3
-                  }
-             // ] */
+             /* This is what the items state variable looks like
+             in the Add List screen.
+              [
+               {
+                  id: 1,
+                  name: Eggs,
+                  price: 4.49,
+                  quantity: 2,
+                  list_id: 1
+                },
+                {
+                  id: 2,
+                  name: Milk,
+                  price: 4.99,
+                  quanity: 1,
+                  list_id: 1
+                }
+                {
+                  id: 3,
+                  name: Bread,
+                  price: 2.99,
+                  quanity: 2,
+                  list_id: 1
+                }
+                {
+                  id: 4,
+                  name: Box of Chocolate,
+                  price: 35.99,
+                  quanity: 1,
+                  list_id: 2
+                }
+                {
+                  id: 5,
+                  name: Necklace,
+                  price: 25.99,
+                  quanity: 1,
+                  list_id: 2
+                }
+                {
+                  id: 6,
+                  name: Bleach,
+                  price: 7.49,
+                  quanity: 1,
+                  list_id: 1
+                }
+                {
+                  id: 7,
+                  name: Dog Food,
+                  price: 16.49,
+                  quanity: 1,
+                  list_id: 3
+                }
+                {
+                  id: 8,
+                  name: Dog Treat,
+                  price: 2.99,
+                  quanity: 2,
+                  list_id: 3
+                }
+              ] 
+             */
            } else {
              // if no rows of data were returned,
              // set items state variable to an empty array
