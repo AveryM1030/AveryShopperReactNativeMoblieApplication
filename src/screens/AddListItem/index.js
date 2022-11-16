@@ -124,6 +124,7 @@ const AddListItemScreen = props => {
        )
      });
     });
+    
     return listener;
  });
 
