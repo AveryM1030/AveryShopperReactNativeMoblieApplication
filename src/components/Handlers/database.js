@@ -6,6 +6,7 @@ const shopperDB = openDatabase({name: 'Shopper.db'});
 const listsTableName = 'lists';
 const itemsTableName = 'items';
 const listItemsTableName = 'list_items';
+const usersTableName = 'users';
 
 module.exports = {
     // declare function that will create the lists table
@@ -138,6 +139,50 @@ module.exports = {
                 },
                 error => {
                     console.log('Error adding list items' + error.message);
+                },
+            );
+        });
+    },
+
+    // declare function that will create the users table
+    createUsersTable: async function () {
+        // declare a transaction that will execute a SQL statement
+        (await shopperDB).transaction(txn => {
+            // execute the SQL
+            txn.executeSql(
+                `CREATE TABLE IF NOT EXISTS ${usersTableName}(
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    username TEXT,
+                    password TEXT
+                );`,
+                // arguments needed when using an SQL prepared statement
+                [],
+                // callback function to handle results of SQL query
+                () => {
+                    console.log('Users table created sucessfully');
+                },
+                error => {
+                    console.log('Error creating users table ' + error.message);
+                },
+            );
+        });
+    },
+
+    // declare functions that will insert a row into the users table
+    addUsers: async function (username, password) {
+        // declare a transaction that will execute an SQL statement
+        (await shopperDB).transaction(txn => {
+            // execute the SQL
+            txn.executeSql(
+                `INSERT INTO ${usersTableName} (username, password) VALUES ("${username}", "${password}")`,
+                // argument passed when using SQL prepared statements
+                [],
+                // callback function to handle results of SQL query
+                () => {
+                    console.log(username + " " + password + " added sucessfully");
+                },
+                error => {
+                    console.log('Error adding user ' + error.message);
                 },
             );
         });
