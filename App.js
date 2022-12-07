@@ -16,8 +16,9 @@ import Router from './src/navigation/Router';
 // decrypt
 // it makes a database more secure - if someone hack into
 // it, he won't be able to steal the user's passwords
-import bcrypt from 'react-native-bcrypt';
+// import bcrypt from 'react-native-bcrypt';
 import { openDatabase } from "react-native-sqlite-storage";
+import { LogBox } from 'react-native';
 
 const database = require('./src/components/Handlers/database.js');
 
@@ -27,7 +28,7 @@ const usersTableName = 'users';
 // create a salt that will be used by bcrypt when creating the hash
 // a salt is a random value that will be appended to the password
 // before it's encrypted to make it more secure
-let salt = bcrypt.genSaltSync(10);
+// let salt = bcrypt.genSaltSync(10);
 
 const App: () => Node = () => {
   try {
@@ -54,16 +55,9 @@ const App: () => Node = () => {
     console.log('Failed to create users table ' + error);
   }
 
-  try {
-    // create the hash
-    let hash = bcrypt.hashSync('Chase@2023', salt);
-    // database.addUsers('asmiles', hash);
-  } catch (error) {
-    console.log('Failed to create users ' + error);
-  }
   return <Router />;
 };
-
+LogBox.ignoreLogs(['Math.random']);
 
 
 export default App;
